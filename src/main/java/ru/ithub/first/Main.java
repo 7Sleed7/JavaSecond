@@ -15,11 +15,11 @@ public class Main {
         Thread editInf = new Thread(new Runnable() {
             @Override
             public synchronized void run() {
-                    if (LogHistory.getLogHistory().getLog()==false) {
-                        LogHistory.getLogHistory().addLogData(true);
-                    } else if (LogHistory.getLogHistory().getLog()==true) {
-                        LogHistory.getLogHistory().addLogData(false);
-                    }
+                if (LogHistory.getLogHistory().getLog() == false) {
+                    LogHistory.getLogHistory().addLogData(true);
+                } else if (LogHistory.getLogHistory().getLog() == true) {
+                    LogHistory.getLogHistory().addLogData(false);
+                }
             }
         });
 

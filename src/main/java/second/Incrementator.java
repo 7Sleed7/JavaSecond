@@ -17,15 +17,15 @@ public class Incrementator implements Runnable {
         while (Counter.getCounter() <= 100) {
             Integer count = counter.incr();
 //            System.out.println("1");
-            synchronized (res){
-                if(count==100){
+            synchronized (res) {
+                if (count == 100) {
                     try {
                         res.wait();
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                     System.out.println(Thread.currentThread().getName() + " is Winner");
-                } else if (count>100) {
+                } else if (count > 100) {
                     System.out.println(Thread.currentThread().getName() + " is loser");
                     res.notify();
                 }
